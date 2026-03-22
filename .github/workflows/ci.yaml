@@ -46,7 +46,7 @@ jobs:
       - name: Patch image tag in deployment.yaml
         run: |
           FULL_IMAGE="${{ steps.vars.outputs.image }}:${{ steps.vars.outputs.sha }}"
-          sed -i "s|image: ghcr.io/.*/app:.*|image: ${FULL_IMAGE}|" k8s/deployment.yaml
+          sed -i "s|image: ghcr.io/.*/.*:.*|image: ${FULL_IMAGE}|" k8s/deployment.yaml
 
       - name: Commit updated manifest
         run: |
