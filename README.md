@@ -236,6 +236,10 @@ argocd repo add https://github.com/your-org/your-repo.git \
   --password your-github-token
 ```
 
+The repository is currently public for simplicity. With more time it would be
+kept private, with repo credentials added via `argocd repo add` during bootstrap
+and read access granted to the evaluator directly.
+
 ## Assumptions and Tradeoffs
 
 The evaluator is expected to clone the repository and run `make setup` to verify
