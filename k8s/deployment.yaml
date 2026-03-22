@@ -17,7 +17,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: app
-          image: ghcr.io/sync0n/app:ed92a6e
+          image: ghcr.io/sync0n/sre-gitops-argocd:ed92a6e
           ports:
             - containerPort: 8080
           livenessProbe:
