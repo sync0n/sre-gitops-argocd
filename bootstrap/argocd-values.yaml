@@ -1,0 +1,11 @@
+global:
+  image:
+    tag: "v2.11.3"
+
+configs:
+  params:
+    server.insecure: "true"
+
+server:
+  service:
+    type: ClusterIP

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
+data:
+  policy.csv: |
+    p, role:readonly, applications, get, */*, allow
+    p, role:readonly, applications, sync, */*, deny
+    p, role:deployer, applications, get, */*, allow
+    p, role:deployer, applications, sync, */*, allow
+    p, role:deployer, applications, delete, */*, deny
+    g, developers, role:readonly
+    g, ops, role:deployer
+  policy.default: role:readonly
